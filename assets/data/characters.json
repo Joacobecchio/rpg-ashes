@@ -1,0 +1,21 @@
+{
+  "players": {
+    "default": {
+      "class": "warrior",
+      "race": "human",
+      "faction": "kingdom",
+      "level": 1,
+      "equipment": ["woodenSword", "leatherArmor", "wardAmulet"]
+    }
+  },
+  "enemies": {
+    "grunt": {
+      "class": "barbarian",
+      "race": "orc",
+      "faction": "bandits",
+      "level": 1,
+      "attackType": "melee",
+      "equipment": []
+    }
+  }
+}
