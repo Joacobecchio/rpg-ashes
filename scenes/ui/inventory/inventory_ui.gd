@@ -166,8 +166,8 @@ func _refresh() -> void:
 		var name_lbl: Label      = s["name_lbl"]
 		var type_lbl: Label      = s["type_lbl"]
 		if i < InventorySystem.bag.size():
-			var item_id := InventorySystem.bag[i]
-			var item    := InventorySystem.ITEMS.get(item_id, {})
+			var item_id: String     = InventorySystem.bag[i]
+			var item:    Dictionary = InventorySystem.ITEMS.get(item_id, {})
 			name_lbl.text = InventorySystem.item_name(item_id)
 			type_lbl.text = _type_str(item.get("type", ""))
 			bg.color      = SLOT_QUEST if item.get("quest_item", false) else SLOT_FILLED
@@ -184,8 +184,8 @@ func _on_equip_click(slot_key: String) -> void:
 func _on_bag_click(idx: int) -> void:
 	if idx >= InventorySystem.bag.size():
 		return
-	var item_id := InventorySystem.bag[idx]
-	var item    := InventorySystem.ITEMS.get(item_id, {})
+	var item_id: String     = InventorySystem.bag[idx]
+	var item:    Dictionary = InventorySystem.ITEMS.get(item_id, {})
 	if item.get("type") == "consumable":
 		InventorySystem.use_consumable(idx)
 	else:
@@ -194,12 +194,12 @@ func _on_bag_click(idx: int) -> void:
 
 func _on_equip_hover(slot_key: String, bg: ColorRect) -> void:
 	bg.color = SLOT_HOVER
-	var item_id := InventorySystem.equipped[slot_key]
+	var item_id: String = InventorySystem.equipped[slot_key]
 	if item_id == "":
 		_desc_lbl.text = ""
 		return
-	var es  := I18nManager.get_language() == "es"
-	var act := "Clic para desequipar" if es else "Click to unequip"
+	var es:  bool   = I18nManager.get_language() == "es"
+	var act: String = "Clic para desequipar" if es else "Click to unequip"
 	_desc_lbl.text = InventorySystem.item_name(item_id) + "  —  " + InventorySystem.item_desc(item_id) + "    [" + act + "]"
 
 func _on_bag_hover(idx: int, bg: ColorRect) -> void:
@@ -208,9 +208,9 @@ func _on_bag_hover(idx: int, bg: ColorRect) -> void:
 	if idx >= InventorySystem.bag.size():
 		_desc_lbl.text = ""
 		return
-	var item_id := InventorySystem.bag[idx]
-	var item    := InventorySystem.ITEMS.get(item_id, {})
-	var es      := I18nManager.get_language() == "es"
+	var item_id: String     = InventorySystem.bag[idx]
+	var item:    Dictionary = InventorySystem.ITEMS.get(item_id, {})
+	var es:      bool       = I18nManager.get_language() == "es"
 	var act: String
 	if item.get("type") == "consumable":
 		act = "Clic para usar" if es else "Click to use"
@@ -231,7 +231,7 @@ func _unhandled_input(event: InputEvent) -> void:
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 func _fmt_bonus(item_id: String) -> String:
-	var bonus := InventorySystem.ITEMS.get(item_id, {}).get("bonus", {})
+	var bonus: Dictionary = InventorySystem.ITEMS.get(item_id, {}).get("bonus", {})
 	if bonus.is_empty():
 		return ""
 	var parts: Array = []
