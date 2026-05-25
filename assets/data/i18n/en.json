@@ -1,0 +1,115 @@
+{
+  "lang": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "splash": {
+    "pressStart": "Press Start"
+  },
+  "menu": {
+    "newGame": "New Game",
+    "loadGame": "Load Game",
+    "settings": "Settings",
+    "exit": "Exit"
+  },
+  "settings": {
+    "title": "Settings",
+    "resolution": "Resolution",
+    "language": "Language",
+    "back": "Back",
+    "toast": {
+      "resolutionApplied": "Resolution applied: {value}"
+    }
+  },
+  "characterCreation": {
+    "title": "Character Creation",
+    "previewTitle": "Preview",
+    "startGame": "Start Game",
+    "back": "Back",
+    "defaultName": "Hero",
+    "nameErrors": {
+      "required": "Name is required.",
+      "tooShort": "Name is too short.",
+      "tooLong": "Name is too long.",
+      "invalidChars": "Only letters and spaces are allowed."
+    },
+    "nameHints": {
+      "minChars": "(minimum 2 characters)"
+    },
+    "label": {
+      "race": "Race",
+      "class": "Class",
+      "faction": "Faction",
+      "gender": "Gender",
+      "head": "Head",
+      "name": "Name"
+    },
+    "stats": {
+      "title": "Stats",
+      "hp": "HP",
+      "mp": "MP",
+      "str": "STR",
+      "dex": "DEX",
+      "int": "INT",
+      "vit": "VIT",
+      "armor": "ARMOR",
+      "mres": "MRES",
+      "tooltip": {
+        "hp": "Life points. Max health.",
+        "mp": "Mana. Used for skills.",
+        "str": "Strength. Physical damage.",
+        "dex": "Dexterity. Accuracy and speed.",
+        "int": "Intelligence. Magic power.",
+        "vit": "Vitality. Defense and resist."
+      }
+    },
+    "pros": "Pros",
+    "cons": "Cons",
+    "modifier": {
+      "critBonus": "CRIT +{value}%",
+      "magicCritBonus": "CRIT MAG +{value}%"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "headVariant": {
+      "base": "Base",
+      "head-1": "Head 1",
+      "head-2": "Head 2"
+    },
+    "view": {
+      "front": "Front",
+      "profileLeft": "Profile Left",
+      "profileRight": "Profile Right",
+      "back": "Back"
+    }
+  },
+  "race": {
+    "human": "Human",
+    "elf": "Elf",
+    "dwarf": "Dwarf",
+    "orc": "Orc",
+    "gnome": "Gnome",
+    "draconic": "Draconic"
+  },
+  "class": {
+    "warrior": "Warrior",
+    "barbarian": "Barbarian",
+    "paladin": "Paladin",
+    "rogue": "Rogue",
+    "archer": "Archer",
+    "mage": "Mage",
+    "warlock": "Warlock",
+    "necromancer": "Necromancer",
+    "druid": "Druid"
+  },
+  "faction": {
+    "neutral": "Neutral",
+    "kingdom": "Kingdom",
+    "bandits": "Bandits"
+  },
+  "skill": {
+    "magicBolt": "Arcane Bolt"
+  }
+}

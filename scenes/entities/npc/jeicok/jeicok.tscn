@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://jeicok001"]
+
+[ext_resource type="Script" path="res://scenes/entities/npc/jeicok/jeicok.gd" id="1_jeicok"]
+
+[sub_resource type="CapsuleShape2D" id="cap001"]
+radius = 11.0
+height = 26.0
+
+[node name="Jeicok" type="CharacterBody2D"]
+script = ExtResource("1_jeicok")
+collision_layer = 1
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("cap001")
+position = Vector2(0, 3)

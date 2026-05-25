@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://intro001"]
+
+[ext_resource type="Script" path="res://scenes/ui/intro/intro.gd" id="1_introscript"]
+
+[node name="Intro" type="Control"]
+script = ExtResource("1_introscript")

@@ -1,0 +1,115 @@
+{
+  "lang": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "splash": {
+    "pressStart": "Presiona cualquier botón"
+  },
+  "menu": {
+    "newGame": "Nueva Partida",
+    "loadGame": "Cargar Partida",
+    "settings": "Opciones",
+    "exit": "Salir"
+  },
+  "settings": {
+    "title": "Opciones",
+    "resolution": "Resolución",
+    "language": "Idioma",
+    "back": "Volver",
+    "toast": {
+      "resolutionApplied": "Resolución aplicada: {value}"
+    }
+  },
+  "characterCreation": {
+    "title": "Creación de personaje",
+    "previewTitle": "Vista previa",
+    "startGame": "Empezar",
+    "back": "Volver",
+    "defaultName": "Héroe",
+    "nameErrors": {
+      "required": "El nombre es obligatorio.",
+      "tooShort": "El nombre es muy corto.",
+      "tooLong": "El nombre es muy largo.",
+      "invalidChars": "Solo letras y espacios."
+    },
+    "nameHints": {
+      "minChars": "(mínimo 2 caracteres)"
+    },
+    "label": {
+      "race": "Raza",
+      "class": "Clase",
+      "faction": "Facción",
+      "gender": "Género",
+      "head": "Cabeza",
+      "name": "Nombre"
+    },
+    "stats": {
+      "title": "Stats",
+      "hp": "HP",
+      "mp": "MP",
+      "str": "STR",
+      "dex": "DEX",
+      "int": "INT",
+      "vit": "VIT",
+      "armor": "ARMOR",
+      "mres": "MRES",
+      "tooltip": {
+        "hp": "Vida. Salud máxima.",
+        "mp": "Maná. Usado en habilidades.",
+        "str": "Fuerza. Daño físico.",
+        "dex": "Destreza. Precisión y velocidad.",
+        "int": "Inteligencia. Poder mágico.",
+        "vit": "Vitalidad. Defensa y resistencia."
+      }
+    },
+    "pros": "Pros",
+    "cons": "Contras",
+    "modifier": {
+      "critBonus": "CRIT +{value}%",
+      "magicCritBonus": "CRIT MAG +{value}%"
+    },
+    "gender": {
+      "male": "Masculino",
+      "female": "Femenino"
+    },
+    "headVariant": {
+      "base": "Base",
+      "head-1": "Cabeza 1",
+      "head-2": "Cabeza 2"
+    },
+    "view": {
+      "front": "Frente",
+      "profileLeft": "Perfil Izq",
+      "profileRight": "Perfil Der",
+      "back": "Espalda"
+    }
+  },
+  "race": {
+    "human": "Humano",
+    "elf": "Elfo",
+    "dwarf": "Enano",
+    "orc": "Orco",
+    "gnome": "Gnomo",
+    "draconic": "Dracónico"
+  },
+  "class": {
+    "warrior": "Guerrero",
+    "barbarian": "Bárbaro",
+    "paladin": "Paladín",
+    "rogue": "Pícaro",
+    "archer": "Arquero",
+    "mage": "Mago",
+    "warlock": "Hechicero",
+    "necromancer": "Nigromante",
+    "druid": "Druida"
+  },
+  "faction": {
+    "neutral": "Neutral",
+    "kingdom": "Reino",
+    "bandits": "Bandidos"
+  },
+  "skill": {
+    "magicBolt": "Misil arcano"
+  }
+}
