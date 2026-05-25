@@ -57,7 +57,7 @@ func _build() -> void:
 	var slot_lbls  := labels_es if es else labels_en
 
 	for i in range(3):
-		var s := _build_equip_slot(panel, Vector2(15, 68 + i * 78), slot_keys[i], slot_lbls[i])
+		var s: Dictionary = _build_equip_slot(panel, Vector2(15, 68 + i * 78), slot_keys[i], slot_lbls[i])
 		_eq_slots.append(s)
 
 	# Vertical divider
@@ -77,7 +77,7 @@ func _build() -> void:
 		var col := i % cols
 		var row := i / cols
 		var pos := Vector2(ox + col * (slot_w + gap), oy + row * (slot_h + gap))
-		var s   := _build_bag_slot(panel, pos, Vector2(slot_w, slot_h), i)
+		var s: Dictionary = _build_bag_slot(panel, pos, Vector2(slot_w, slot_h), i)
 		_bag_slots.append(s)
 
 	# Bottom area
@@ -146,11 +146,11 @@ func _refresh() -> void:
 
 	var slot_keys := ["weapon", "chest", "accessory"]
 	for i in range(3):
-		var s        := _eq_slots[i]
-		var item_id  := InventorySystem.equipped[slot_keys[i]]
-		var bg       := s["bg"]   as ColorRect
-		var name_lbl := s["name_lbl"] as Label
-		var bonus_lbl:= s["bonus_lbl"] as Label
+		var s:         Dictionary = _eq_slots[i]
+		var item_id:   String     = InventorySystem.equipped[slot_keys[i]]
+		var bg:        ColorRect  = s["bg"]
+		var name_lbl:  Label      = s["name_lbl"]
+		var bonus_lbl: Label      = s["bonus_lbl"]
 		if item_id == "":
 			name_lbl.text  = "—"
 			bonus_lbl.text = ""
@@ -161,10 +161,10 @@ func _refresh() -> void:
 			bg.color       = SLOT_QUEST if InventorySystem.ITEMS[item_id].get("quest_item", false) else SLOT_FILLED
 
 	for i in range(12):
-		var s        := _bag_slots[i]
-		var bg       := s["bg"]       as ColorRect
-		var name_lbl := s["name_lbl"] as Label
-		var type_lbl := s["type_lbl"] as Label
+		var s:        Dictionary = _bag_slots[i]
+		var bg:       ColorRect  = s["bg"]
+		var name_lbl: Label      = s["name_lbl"]
+		var type_lbl: Label      = s["type_lbl"]
 		if i < InventorySystem.bag.size():
 			var item_id := InventorySystem.bag[i]
 			var item    := InventorySystem.ITEMS.get(item_id, {})
