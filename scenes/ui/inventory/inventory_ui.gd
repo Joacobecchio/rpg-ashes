@@ -223,11 +223,6 @@ func _on_hover_exit(bg: ColorRect, base_color: Color) -> void:
 	_desc_lbl.text = ""
 	_refresh()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if visible and event.is_action_pressed("inventory"):
-		InventorySystem.toggle_ui()
-		get_viewport().set_input_as_handled()
-
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 func _fmt_bonus(item_id: String) -> String:

@@ -37,7 +37,6 @@ func _build_visual() -> void:
 func _on_physics_npc(delta: float) -> void:
 	if _player_near:
 		velocity = Vector2.ZERO
-		move_and_slide()
 		return
 
 	if _waiting:

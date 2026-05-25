@@ -41,7 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		if InventorySystem.is_open:
 			InventorySystem.toggle_ui()
-		else:
+		elif not DialogueManager.is_active():
 			SaveSystem.save(self)
 			Transition.to_scene("res://scenes/ui/main_menu/main_menu.tscn")
 
