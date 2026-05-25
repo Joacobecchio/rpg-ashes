@@ -24,6 +24,7 @@ I18nManager="*res://scripts/autoloads/i18n_manager.gd"
 SaveSystem="*res://scripts/autoloads/save_system.gd"
 Transition="*res://scripts/autoloads/transition.gd"
 InventorySystem="*res://scripts/autoloads/inventory_system.gd"
+PauseSystem="*res://scripts/autoloads/pause_system.gd"
 
 [display]
 

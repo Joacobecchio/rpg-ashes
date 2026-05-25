@@ -60,6 +60,7 @@ signal inventory_changed
 signal item_acquired(item_id: String)
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	call_deferred("_create_ui")
 
 func _process(_delta: float) -> void:

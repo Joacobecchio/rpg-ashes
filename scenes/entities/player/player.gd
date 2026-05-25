@@ -37,13 +37,6 @@ func _apply_save_if_exists() -> void:
 		for key in data["flags"]:
 			DialogueManager.flags[key] = data["flags"][key]
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		if InventorySystem.is_open:
-			InventorySystem.toggle_ui()
-		elif not DialogueManager.is_active():
-			SaveSystem.save(self)
-			Transition.to_scene("res://scenes/ui/main_menu/main_menu.tscn")
 
 func _physics_process(_delta: float) -> void:
 	if InventorySystem.is_open or DialogueManager.is_active():
