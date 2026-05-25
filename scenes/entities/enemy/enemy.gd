@@ -94,9 +94,19 @@ func _on_death() -> void:
 	if player:
 		player.gain_xp(xp_reward)
 	died.emit(xp_reward)
+	_try_drop()
 	var tween := create_tween()
 	tween.tween_property(self, "modulate", Color(1.0, 1.0, 1.0, 0.0), 0.35)
 	tween.tween_callback(queue_free)
+
+func _try_drop() -> void:
+	var roll := randf()
+	var drop := ""
+	if   roll < 0.30: drop = "health_potion"
+	elif roll < 0.42: drop = "rusty_dagger"
+	elif roll < 0.50: drop = "leather_tunic"
+	if drop != "":
+		InventorySystem.add_item(drop)
 
 # ── Visuals ───────────────────────────────────────────────────────────────────
 

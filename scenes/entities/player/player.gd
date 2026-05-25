@@ -31,13 +31,27 @@ func _apply_save_if_exists() -> void:
 		stats = data["stats"]
 	if data.has("position"):
 		global_position = Vector2(data["position"]["x"], data["position"]["y"])
+	if data.has("inventory"):
+		InventorySystem.load_save_data(data["inventory"])
+	if data.has("flags"):
+		for key in data["flags"]:
+			DialogueManager.flags[key] = data["flags"][key]
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel"):
-		SaveSystem.save(self)
-		Transition.to_scene("res://scenes/ui/main_menu/main_menu.tscn")
+	if event.is_action_pressed("inventory") and not DialogueManager.is_active():
+		InventorySystem.toggle_ui()
+	elif event.is_action_pressed("ui_cancel"):
+		if InventorySystem.is_open:
+			InventorySystem.toggle_ui()
+		else:
+			SaveSystem.save(self)
+			Transition.to_scene("res://scenes/ui/main_menu/main_menu.tscn")
 
 func _physics_process(_delta: float) -> void:
+	if InventorySystem.is_open or DialogueManager.is_active():
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var speed := SPRINT_SPEED if Input.is_action_pressed("sprint") else SPEED
 	velocity = direction * speed

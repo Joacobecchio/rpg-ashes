@@ -4,9 +4,11 @@ const SAVE_PATH := "user://savegame.json"
 
 func save(player: Node) -> void:
 	var data := {
-		"position": { "x": player.global_position.x, "y": player.global_position.y },
-		"scene":    player.get_tree().current_scene.scene_file_path,
-		"stats":    player.stats.duplicate(),
+		"position":  { "x": player.global_position.x, "y": player.global_position.y },
+		"scene":     player.get_tree().current_scene.scene_file_path,
+		"stats":     player.stats.duplicate(),
+		"inventory": InventorySystem.get_save_data(),
+		"flags":     DialogueManager.flags.duplicate(),
 	}
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data, "\t"))
