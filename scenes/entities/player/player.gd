@@ -38,9 +38,7 @@ func _apply_save_if_exists() -> void:
 			DialogueManager.flags[key] = data["flags"][key]
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("inventory") and not DialogueManager.is_active():
-		InventorySystem.toggle_ui()
-	elif event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("ui_cancel"):
 		if InventorySystem.is_open:
 			InventorySystem.toggle_ui()
 		else:

@@ -62,8 +62,14 @@ signal item_acquired(item_id: String)
 func _ready() -> void:
 	call_deferred("_create_ui")
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("inventory") and not DialogueManager.is_active():
+		toggle_ui()
+
 func _create_ui() -> void:
-	var scene := load("res://scenes/ui/inventory/inventory_ui.tscn")
+	var scene = load("res://scenes/ui/inventory/inventory_ui.tscn")
+	if scene == null:
+		return
 	_ui = scene.instantiate()
 	get_tree().root.add_child(_ui)
 
